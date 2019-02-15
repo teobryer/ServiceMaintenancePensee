@@ -28,8 +28,8 @@ public class VueInspirationVisuelle extends Application {
 		scene = new Scene(racine, 800, 600);
 		stade.setScene(scene);
 		stade.show();
-		ControleurInspirationVisuelle.getInstance().initialiser();
-		
+		//ControleurInspirationVisuelle.getInstance().initialiser();
+		afficherListePensees();
 		// stade.setOnShowing(new EventHandler<WindowEvent>() {public void handle(WindowEvent event) {  } });
 	}	
 	
@@ -38,6 +38,13 @@ public class VueInspirationVisuelle extends Application {
 		System.out.println("afficherListePensees()");
 		TextArea champsMessage = (TextArea) scene.lookup("#listePensees");
 		champsMessage.setText("test");
+	}
+	
+	public void afficherInspiration(String s)
+	{
+		System.out.println("afficherListePensees()");
+		TextArea champsMessage = (TextArea) scene.lookup("#listePensees");
+		champsMessage.setText(s);
 	}
 	
 	
