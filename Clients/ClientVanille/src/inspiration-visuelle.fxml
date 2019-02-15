@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.BorderPane?>
 
-<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="728.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="ControleurInspirationVisuelle">
-  <children>
-    <BorderPane layoutX="164.0" layoutY="39.0" prefHeight="343.0" prefWidth="364.0">
-      <bottom>
-        <Button mnemonicParsing="false" onAction="#trouverInspiration" prefWidth="364.0" text="Trouver une inspiration" />
-      </bottom>
-      <center>
-        <TextArea id="listePensees" prefHeight="409.0" prefWidth="200.0" style=" -fx-border-color: brown ;  &#10; -fx-border-width: 2px ;  &#10;-fx-control-inner-background: orange;" wrapText="true" />
-      </center>
-      <top>
-        <TextArea prefHeight="67.0" prefWidth="364.0" style="-fx-font-size: 40pt;&#10;-fx-font-weight:bold;&#10;-fx-text-fill:brown;" text="Pensée du jour" wrapText="true" />
-      </top>
-    </BorderPane>
-  </children>
-</AnchorPane>
+<BorderPane prefHeight="343.0" prefWidth="364.0" style="-fx-background-color: yellow;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControleurInspirationVisuelle">
+   <bottom>
+      <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#trouverInspiration" prefHeight="26.0" prefWidth="422.0" style="-fx-background-color: yellow;" text="Trouver une inspiration" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <TextArea id="listePensees" prefHeight="409.0" prefWidth="200.0" style="-fx-border-color: white; -fx-border-width: 2px; -fx-control-inner-background: yellow;" wrapText="true" />
+   </center>
+   <top>
+      <Label style="-fx-background-color: yellow;" text="Pensée du jour" BorderPane.alignment="CENTER" />
+   </top>
+</BorderPane>
