@@ -36,7 +36,7 @@ public class ControleurInspirationVisuelle implements Initializable {
 	protected void trouverInspiration(ActionEvent evenement) {
 
 		System.out.println("trouverInspiration( )");
-		VueInspirationVisuelle.getInstance().afficherInspiration( listePensees.get(new Random().nextInt(listePensees.size())).getMessage());
+		VueInspirationVisuelle.getInstance().afficherInspiration( penseeDAO.chargerPenseeAleatoire().getMessage());
 
 		// Singleton obligatoire car le framework de JavaFX cache l'instance
 		// VueInspirationVisuelle.getInstance().ecrireUnMessage("allo");

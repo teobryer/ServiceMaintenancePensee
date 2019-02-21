@@ -10,6 +10,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import outils.Journal;
 
 public class VueInspirationVisuelle extends Application {
 	public VueInspirationVisuelle()
@@ -42,9 +43,10 @@ public class VueInspirationVisuelle extends Application {
 	
 	public void afficherInspiration(String s)
 	{
-		System.out.println("afficherListePensees()");
+		System.out.println("afficherInspiration()");
 		TextArea champsMessage = (TextArea) scene.lookup("#listePensees");
 		champsMessage.setText(s);
+		Journal.ecrire(5, s);
 	}
 	
 	
