@@ -5,6 +5,7 @@ import java.util.Random;
 import java.util.ResourceBundle;
 
 import accesseur.PenseeDAO;
+import accesseur.cache.PenseeDAOcache;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,6 +16,7 @@ import outils.Journal;
 public class ControleurInspirationVisuelle implements Initializable {
 	protected PenseeDAO penseeDAO = new PenseeDAO();
 	protected List<Pensee> listePensees ;
+	protected PenseeDAOcache daoCache = new PenseeDAOcache();
 
 	public ControleurInspirationVisuelle() {
 		 listePensees = penseeDAO.listerPensees();
@@ -36,7 +38,9 @@ public class ControleurInspirationVisuelle implements Initializable {
 	protected void trouverInspiration(ActionEvent evenement) {
 
 		System.out.println("trouverInspiration( )");
-		VueInspirationVisuelle.getInstance().afficherInspiration( penseeDAO.chargerPenseeAleatoire().getMessage());
+		Pensee p = penseeDAO.chargerPenseeAleatoire();
+		VueInspirationVisuelle.getInstance().afficherInspiration( p.getMessage());
+		daoCache.enregistrerPensee(p);
 
 		// Singleton obligatoire car le framework de JavaFX cache l'instance
 		// VueInspirationVisuelle.getInstance().ecrireUnMessage("allo");

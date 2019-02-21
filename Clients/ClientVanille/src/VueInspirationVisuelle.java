@@ -49,5 +49,6 @@ public class VueInspirationVisuelle extends Application {
 		Journal.ecrire(5, s);
 	}
 	
+
 	
 }
