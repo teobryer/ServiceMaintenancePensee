@@ -41,7 +41,7 @@ public class VueInspirationVisuelle extends Application {
 		champsMessage.setText("test");
 	}
 	
-	public void afficherInspiration(String s)
+	public void afficherPensee(String s)
 	{
 		System.out.println("afficherInspiration()");
 		TextArea champsMessage = (TextArea) scene.lookup("#listePensees");

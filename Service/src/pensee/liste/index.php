@@ -1,14 +1,14 @@
 <?php 
-
-	include "../../accesseur/PenseeDAO.php";
+   include "../../accesseur/PenseeDAO.php";
 	$penseeDAO = new PenseeDAO();
 	//print_r($penseeDAO);
 	$listePensees = $penseeDAO->listerPensees();
 	//print_r($listePensees);
-?><?php 
 
+?><?php
 header("Content-type: text/xml");
-echo '<?xml version="1.0" encoding="UTF-8"?>';
+echo '<?xml version="1.0" encoding="UTF-8"?>'; 
+
 ?>
 <pensees>
 	<nombre><?=count($listePensees)?></nombre>
@@ -22,6 +22,7 @@ foreach($listePensees as $pensee)
 		<auteur><?=($pensee->auteur)?></auteur>
 		<message><?=($pensee->message)?></message>
 		<annee><?=$pensee->annee?></annee>
+		<source><?=$pensee->source?></source>	
 		<id><?=$pensee->idPensee?></id>
 	</pensee>
 	<?php
